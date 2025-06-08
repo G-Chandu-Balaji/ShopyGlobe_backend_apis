@@ -15,6 +15,65 @@ This repository contains the backend API for the **ShoppyGlobe** e-commerce plat
 
 ---
 
+## ▶️ How to Run the Project
+
+Follow the steps below to set up and run the backend server locally.
+
+### 🔧 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [MongoDB](https://www.mongodb.com/) (local or Atlas)
+- npm (comes with Node.js)
+
+---
+
+### 🛠️ Installation Steps
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/shoppyglobe-backend.git
+cd shoppyglobe-backend
+```
+
+2. **📦 Install Dependencies**
+
+```bash
+npm install
+```
+
+3. **📁 Create a .env File**
+   Add the Following Environment Variables to .env
+
+```PORT=5000
+MONGO_URI=mongodb://localhost:27017/shoppyglobe
+JWT_SECRET=your_jwt_secret
+```
+
+ℹ️ Replace MONGO_URI and JWT_SECRET with your actual MongoDB connection string and secret key.
+
+4. **▶️ Start the Server**
+
+if using nodemon then:
+
+```
+"scripts": {
+  "Start": "nodemon Server.js"
+}
+```
+
+then
+
+```bash
+npm start
+```
+
+## The server will start on:
+
+📍 http://localhost:5000
+
 ## 🛠️ API Endpoints
 
 ### 🔐 Authentication
@@ -78,6 +137,15 @@ All APIs were thoroughly tested using **Thunder Client**.
   "_Id": "USER_ID_HERE",
   "product": "PRODUCT_ID_HERE",
   "quantity": 2
+}
+```
+
+### 👤 User Model
+
+```json
+{
+  "email": "user@example.com",
+  "password": "hashed_password"
 }
 ```
 
