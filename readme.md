@@ -11,7 +11,7 @@ This repository contains the backend API for the **ShoppyGlobe** e-commerce plat
 - 🛒 Secure Cart Operations
 - 🧾 MongoDB Integration via Mongoose
 - ✅ Input Validation & Error Handling
-- 🧪 Tested using Postman
+- 🧪 Tested using ThunderClient
 
 ---
 
@@ -28,10 +28,13 @@ This repository contains the backend API for the **ShoppyGlobe** e-commerce plat
 
 ### 📦 Product APIs
 
-| Method | Endpoint        | Description         |
-| ------ | --------------- | ------------------- |
-| GET    | `/products`     | Fetch all products  |
-| GET    | `/products/:id` | Fetch product by ID |
+| Method | Endpoint        | Description          |
+| ------ | --------------- | -------------------- |
+| GET    | `/products`     | Fetch all products   |
+| GET    | `/products/:id` | Fetch product by ID  |
+| POST   | `/products`     | Add a New Product    |
+| PUT    | `/products/:id` | Update Product by ID |
+| DELETE | `/products/:id` | Delete Product by ID |
 
 ---
 
@@ -39,6 +42,7 @@ This repository contains the backend API for the **ShoppyGlobe** e-commerce plat
 
 | Method | Endpoint    | Description                     |
 | ------ | ----------- | ------------------------------- |
+| GET    | `/cart`     | Fetch products in cart          |
 | POST   | `/cart`     | Add product to cart             |
 | PUT    | `/cart/:id` | Update product quantity in cart |
 | DELETE | `/cart/:id` | Remove product from cart        |
@@ -47,7 +51,7 @@ This repository contains the backend API for the **ShoppyGlobe** e-commerce plat
 
 ## 🧪 API Testing
 
-All APIs were thoroughly tested using **Postman**.
+All APIs were thoroughly tested using **Thunder Client**.
 
 - Test cases include user registration, login, product fetch, and cart operations.
 - Screenshots of tests are available in the `/screenshots` directory.
@@ -71,8 +75,8 @@ All APIs were thoroughly tested using **Postman**.
 
 ```json
 {
-  "userId": "USER_ID_HERE",
-  "productId": "PRODUCT_ID_HERE",
+  "_Id": "USER_ID_HERE",
+  "product": "PRODUCT_ID_HERE",
   "quantity": 2
 }
 ```

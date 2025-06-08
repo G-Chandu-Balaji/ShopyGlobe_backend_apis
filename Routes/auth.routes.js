@@ -3,7 +3,7 @@ import { Register, Login } from "../Controller/auth.controller.js";
 
 const router = express.Router();
 
-// middleware/validateRegisterInput.js
+// middleware/validateRegisterInput
 export function validateRegisterInput(req, res, next) {
   const { email, password } = req.body;
 
@@ -28,7 +28,7 @@ export function validateRegisterInput(req, res, next) {
   next();
 }
 
-// middleware/validateLoginInput.js
+// middleware/validateLoginInput
 export function validateLoginInput(req, res, next) {
   const { email, password } = req.body;
   const errors = {};
