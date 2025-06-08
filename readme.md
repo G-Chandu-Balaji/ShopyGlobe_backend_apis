@@ -34,8 +34,8 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/shoppyglobe-backend.git
-cd shoppyglobe-backend
+git clone https://github.com/G-Chandu-Balaji/ShopyGlobe_backend_apis.git
+cd ShopyGlobe_backend_apis
 ```
 
 2. **📦 Install Dependencies**
@@ -47,7 +47,8 @@ npm install
 3. **📁 Create a .env File**
    Add the Following Environment Variables to .env
 
-```PORT=5000
+```
+PORT=5000
 MONGO_URI=mongodb://localhost:27017/shoppyglobe
 JWT_SECRET=your_jwt_secret
 ```
@@ -56,7 +57,7 @@ JWT_SECRET=your_jwt_secret
 
 4. **▶️ Start the Server**
 
-if using nodemon then:
+if using nodemon then in package.json in script add the following
 
 ```
 "scripts": {
