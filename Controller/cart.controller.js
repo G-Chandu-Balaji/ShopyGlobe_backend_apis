@@ -21,10 +21,16 @@ export async function ADDToCart(req, res) {
   try {
     const product = await productModel.findById(productId);
     if (!product) return res.status(404).json({ error: "Product not found" });
+    const product1 = await cartModel.find({ product: productId });
+    if (product1) {
+      return res.status(404).json({ error: "Product already in cart" });
+    }
 
     const cartItem = new cartModel({ product: productId, quantity });
     await cartItem.save();
-    res.status(201).json(cartItem);
+    res
+      .status(201)
+      .json({ message: "Product Added to Cart", product: cartItem });
   } catch (err) {
     console.error("Error creating product:", err);
     res.status(500).json({ error: "Internal Server Error" });
@@ -47,7 +53,9 @@ export async function UpadateQuantity(req, res) {
       return res.status(404).json({ error: "Cart item not found" });
     }
 
-    res.status(200).json(cartItem);
+    res
+      .status(200)
+      .json({ message: "Product quantity updated in cart", product: cartItem });
   } catch (err) {
     console.error("Error updating cart item:", err);
     res.status(500).json({ error: "Internal Server Error" });
@@ -67,7 +75,7 @@ export async function DeleteProductInCart(req, res) {
       return res.status(404).json({ error: "Cart item not found" });
     }
 
-    res.json({ message: "Cart item removed" });
+    res.json({ message: "Item removed from Cart " });
   } catch (err) {
     console.error("Error deleting cart item:", err);
     res.status(500).json({ error: "Internal Server Error" });
